@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the current release version of Biba</string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.autopkg-recipies.download.biba</string>
+    <string>com.github.rderewianko.autopkg-recipes.biba.download</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
