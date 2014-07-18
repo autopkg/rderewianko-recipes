@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.rderewianko.autopkg-recipes.download.biba</string>
+    <string>com.github.rderewianko.autopkg.download.biba</string>
     <key>Process</key>
     <array>
         <dict>
