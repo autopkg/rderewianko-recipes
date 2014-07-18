@@ -10,10 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>Biba</string>
-        <key>DOWNLOAD_URL</key>
-        <string>https://biba.com/osx_downloads/dmg/</string>
-        <key>USER_AGENT</key>
-        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.28.10 (KHTML, like Gecko) Version/6.0.3 Safari/536.28.10</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -25,14 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
+                <string>https://biba.com/osx_downloads/dmg/</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
-                <key>request_headers</key>
-                <dict>
-                        <key>user-agent</key>
-                        <string>%USER_AGENT%</string>
-                </dict>
             </dict>
         </dict>
         <dict>
