@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the current release version of Biba</string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.autopkg-recipes.biba.download</string>
+    <string>com.github.rderewianko.autopkg-recipes.download.biba</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -20,8 +20,7 @@
             <dict>
                 <key>url</key>
                 <string>http://biba.com/osx_downloads/dmg/</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
+                
             </dict>
             <key>Processor</key>
             <string>URLDownloader</string>
