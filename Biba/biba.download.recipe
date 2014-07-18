@@ -18,7 +18,7 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
+                <key>DOWNLOAD_URL</key>
                 <string>https://biba.com/osx_downloads/dmg/<string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
