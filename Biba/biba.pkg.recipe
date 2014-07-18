@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Biba and creates a package.</string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.autopkg-recipes.biba.pkg</string>
+    <string>com.github.rderewianko.autopkg-recipes.pkg.biba</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.rderewianko.autopkg-recipes.biba.dowload</string>
+    <string>com.github.rderewianko.autopkg-recipes.download.biba</string>
     <key>Process</key>
     <array>
         <dict>
