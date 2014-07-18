@@ -12,7 +12,7 @@
         <string>Biba</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>2.9.1970</string>
+    <string>0.2.9</string>
     <key>ParentRecipe</key>
     <string>com.github.rderewianko.autopkg-recipes.biba.dowload</string>
     <key>Process</key>
