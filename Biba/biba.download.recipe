@@ -9,7 +9,7 @@
         <key>IDENTIFIER</key>
         <string>com.github.rderewianko.autopkg.download.biba</string>
         <key>NAME</key>
-        <string>SublimeText2</string>
+        <string>Biba</string>
         <key>SPARKLE_FEED_URL</key>
         <string>https://biba.com/osx_downloads/appcast</string>
     </dict>
