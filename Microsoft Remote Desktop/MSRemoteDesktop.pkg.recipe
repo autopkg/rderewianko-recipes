@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.rderewianko.pkg.MSRemoteDesktop</string>
+	<string>com.github.rderewianko.autopkg.pkg.MSRemoteDesktop</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
