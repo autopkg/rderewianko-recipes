@@ -21,7 +21,6 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                http://www.masergy.com/sites/default/files/software/Communicator.btbc.mac-20.0.1.240-BRC.zip
                 <string>http://www.masergy.com/solutions/unified-communications/software-download</string>
                 <key>re_pattern</key>
                 <string>(?P&lt;zip&gt;Communicator.btbc.mac-.*.*.*.*.zip)</string>
