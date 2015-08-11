@@ -31,7 +31,7 @@ https://github.com/homebysix/auto-update-magic</string>
 		<key>NAME</key>
 		<string>Biba</string>
 		<key>POLICY_CATEGORY</key>
-		<string>General Applications</string>
+		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
 		<key>version</key>
