@@ -35,7 +35,7 @@
     <key>MinimumVersion</key>
     <string>0.3.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.rderewianko.pkg.ADPassMon</string>
+    <string>com.github.rderewianko.pkg.ADPassMonV2</string>
     <key>Process</key>
     <array>
         <dict>
