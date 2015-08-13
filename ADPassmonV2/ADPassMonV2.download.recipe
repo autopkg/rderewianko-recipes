@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the current release of (macmule's) ADPassMon from Github. </string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.download.ADPassMon</string>
+    <string>com.github.rderewianko.download.ADPassMonV2</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
