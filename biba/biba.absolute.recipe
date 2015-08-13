@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Biba and creates a package. Then, uploads to Absolute Manage</string>
 	<key>Identifier</key>
-	<string>com.github.rderewianko.autopkg.absolute.biba</string>
+	<string>com.github.rderewianko.absolute.biba</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rderewianko.autopkg.pkg.biba</string>
+	<string>com.github.rderewianko.pkg.biba</string>
 	<key>Process</key>
 	<array>
 		<dict>

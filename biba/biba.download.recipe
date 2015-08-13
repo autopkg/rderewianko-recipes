@@ -7,7 +7,7 @@
     <key>Input</key>
     <dict>
         <key>IDENTIFIER</key>
-        <string>com.github.rderewianko.autopkg.download.biba</string>
+        <string>com.github.rderewianko.download.biba</string>
         <key>NAME</key>
         <string>Biba</string>
         <key>SPARKLE_FEED_URL</key>

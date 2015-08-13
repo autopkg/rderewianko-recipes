@@ -15,7 +15,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>Description</key>
 	<string>Downloads the latest Biba and creates a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.rderewianko.autopkg.jss.biba</string>
+	<string>com.github.rderewianko.jss.biba</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -40,7 +40,7 @@ https://github.com/homebysix/auto-update-magic</string>
 	<key>MinimumVersion</key>
 	<string>0.2.9</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rderewianko.autopkg.pkg.biba</string>
+	<string>com.github.rderewianko.pkg.biba</string>
 	<key>Process</key>
 	<array>
 		<dict>
