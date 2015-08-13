@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<stringDownloads the current release version of ADPassMon(V2) and builds a package. Then, uploads to the JSS.</string>
+	<string>Downloads the current release version of ADPassMon(V2) and builds a package. Then, uploads to the JSS.</string>
 	<key>Identifier</key>
 	<string>com.github.rderewianko.absolute.AdPassMonV2</string>
 	<key>Input</key>
