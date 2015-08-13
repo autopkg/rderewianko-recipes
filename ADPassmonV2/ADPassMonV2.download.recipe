@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release of Macmule ADPassMon from Github.</string>
+    <string>Downloads the current release of (macmule's) ADPassMon from Github. </string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.download.ADPassMonV2</string>
+    <string>com.github.rderewianko.download.ADPassMon</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>github_repo</key>
-                <string>Macmule/ADPassMon</string>
+                <string>macmule/ADPassMon</string>
             </dict>
         </dict>
         <dict>
