@@ -5,11 +5,11 @@
     <key>Description</key>
     <string>Downloads the latest Masergy Communicator and creates a package</string>
     <key>Identifier</key>
-    <string>com.github.rderewianko.pkg.casergycommunicator</string>
+    <string>com.github.rderewianko.pkg.masergycommunicator</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Dropbox</string>
+        <string>MasergyCommunicator</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
