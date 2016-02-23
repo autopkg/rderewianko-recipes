@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Biba and creates a package. Then, uploads to Absolute Manage</string>
+	<string>Downloads the latest Biba and creates a package. Then, uploads to LanRev</string>
 	<key>Identifier</key>
-	<string>com.github.rderewianko.absolute.biba</string>
+	<string>com.github.rderewianko.lanrev.biba</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -22,7 +22,7 @@
 			<dict>
 				<key>dest_payload_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.amsdpackages</string>
-				<key>import_abman_to_servercenter</key>
+				<key>import_pkg_to_servercenter</key>
 				<true/>
 				<key>sdpackages_ampkgprops_path</key>
 				<string>%RECIPE_DIR%/%NAME%-Defaults.ampkgprops</string>
@@ -30,9 +30,7 @@
 				<string>%pkg_path%</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.tburgin.AbsoluteManageExport/AbsoluteManageExport</string>
-			<key>SharedProcessorRepoURL</key>
-			<string>https://github.com/tburgin/AbsoluteManageExport</string>
+			<string>com.github.jbaker10.LANrevImporter/LANrevImporter</string>
 		</dict>
 	</array>
 </dict>
