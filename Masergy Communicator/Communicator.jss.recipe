@@ -3,42 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>
-This AutoPkg recipe was created using JSSRecipeCreator: 
-https://github.com/sheagcraig/JSSRecipeCreator
-
-It is meant to be used with JSSImporter: 
-https://github.com/sheagcraig/JSSImporter
-
-For tips on integrating JSSImporter into your Casper environment, check out Auto Update Magic:
-https://github.com/homebysix/auto-update-magic</string>
+	<string>Created with Recipe Robot v1.0.1 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the current release version of ADPassMon and builds a package. Then, uploads to the JSS.</string>
+	<string>Downloads the latest version of Masergy Communicator and imports it into your JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.rderewianko.jss.ADPassMonv1</string>
+	<string>com.github.jss-recipes.jss.MasergyCommunicator</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
-		<string>Automated Deployment</string>
-		<key>DESCRIPTION</key>
-		<string>Active Directory Password Monitor menulet app for OS X 10.8+</string>
+		<string>Productivity</string>
 		<key>GROUP_NAME</key>
 		<string>%NAME%-update-smart</string>
 		<key>GROUP_TEMPLATE</key>
-		<string>%RECIPE_DIR%/SmartGroupTemplate.xml</string>
-		<key>ICON</key>
-		<string>%RECIPE_DIR%/ADPassMon.png</string>
+		<string>SmartGroupTemplate.xml</string>
 		<key>NAME</key>
-		<string>ADPassMon</string>
+		<string>Masergy Communicator</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Testing</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>%RECIPE_DIR%/PolicyTemplate.xml</string>
+		<string>PolicyTemplate.xml</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>Update for Masergy Communicator.</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.0</string>
+	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.homebysix.pkg.ADPassMon</string>
+	<string>com.rderewianko.pkg.MasergyCommunicator</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -64,9 +56,9 @@ https://github.com/homebysix/auto-update-magic</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>self_service_description</key>
-				<string>%DESCRIPTION%</string>
+				<string>%SELF_SERVICE_DESCRIPTION%</string>
 				<key>self_service_icon</key>
-				<string>%ICON%</string>
+				<string>%SELF_SERVICE_ICON%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
