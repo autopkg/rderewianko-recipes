@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Masergy Communicator and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.Communicator</string>
+	<string>com.rderewianko.pkg.MasergyCommunicator</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
