@@ -47,6 +47,10 @@
 			<string>Copier</string>
 		</dict>
 		<dict>
+    		<key>Processor</key>
+    		<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
@@ -71,7 +75,7 @@
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
-					<string>%version^(\d+\.)?(\d+\.)?(\*|\d.)?(\d+)%</string>
+					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
