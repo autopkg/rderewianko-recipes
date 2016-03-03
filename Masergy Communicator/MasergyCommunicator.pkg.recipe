@@ -63,8 +63,8 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>%BUNDLE_ID%</string>
-					<key>options</key>
+					<string>Communicator</string>
+					<key></key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
