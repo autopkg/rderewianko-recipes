@@ -71,7 +71,7 @@
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
 					<key>version</key>
-					<string>^(\d+\.)?(\d+\.)?(\*|\d.)?([0-9]{4})</string>
+					<string>%version%^(\d+\.)?(\d+\.)?(\*|\d.)?([0-9]{4})</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
