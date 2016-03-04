@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.MasergyCommunicator</string>
+	<string>com.rderewianko.download.Masergy Communicator</string>
 	<key>Process</key>
 	<array>
 		<dict>
