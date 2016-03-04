@@ -47,10 +47,6 @@
 			<string>Copier</string>
 		</dict>
 		<dict>
-    		<key>Processor</key>
-    		<string>com.github.homebysix.VersionSplitter/VersionSplitter</string>
-		</dict>
-		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
