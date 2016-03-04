@@ -7,16 +7,16 @@
 	<key>Description</key>
 	<string>Installs the latest version of Masergy Communicator.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.install.Masergy Communicator</string>
+	<string>com.rderewianko.install.MasergyCommunicator</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Masergy Communicator</string>
+		<string>MasergyCommunicator</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.Masergy Communicator</string>
+	<string>com.rderewianko.download.MasergyCommunicator</string>
 	<key>Process</key>
 	<array>
 		<dict>
