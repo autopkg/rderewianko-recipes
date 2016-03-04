@@ -7,18 +7,18 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Masergy Communicator and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.MasergyCommunicator</string>
+	<string>com.rderewianko.pkg.Masergy Communicator</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
 		<string></string>
 		<key>NAME</key>
-		<string>MasergyCommunicator</string>
+		<string>Masergy Communicator</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.MasergyCommunicator</string>
+	<string>com.rderewianko.download.Masergy Communicator</string>
 	<key>Process</key>
 	<array>
 		<dict>
