@@ -5,15 +5,15 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of STS and imports it into Munki.</string>
+	<string>Downloads the latest version of Spring Tool Suite and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.munki.STS</string>
+	<string>com.rderewianko.munki.Spring Tool Suite</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>STS</string>
+		<string>Spring Tool Suite</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,12 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Practice tests for the Veterinary Technician National Examination.</string>
+			<string>The Spring Tool Suite is an Eclipse-based development environment that is customized for developing Spring applications. It provides a ready-to-use environment to implement, debug, run, and deploy your Spring applications, including integrations for Pivotal tc Server, Pivotal Cloud Foundry, Git, Maven, AspectJ, and more.
+</string>
 			<key>developer</key>
-			<string>Trevor Marshall</string>
+			<string>Pivotal</string>
 			<key>display_name</key>
-			<string>STS</string>
+			<string>Spring Tool Suite</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,7 +36,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.STS</string>
+	<string>com.rderewianko.download.Spring Tool Suite</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -5,20 +5,20 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of STS and creates a package.</string>
+	<string>Downloads the latest version of Spring Tool Suite and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.STS</string>
+	<string>com.rderewianko.pkg.Spring Tool Suite</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
 		<string>org.springsource.sts.ide</string>
 		<key>NAME</key>
-		<string>STS</string>
+		<string>Spring Tool SuiteS=</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.STS</string>
+	<string>com.rderewianko.download.Spring Tool Suite</string>
 	<key>Process</key>
 	<array>
 		<dict>
