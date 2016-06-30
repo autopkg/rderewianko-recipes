@@ -2,7 +2,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of 🐔 and creates a package.</string>
+    <string>Downloads the current release version of chicken and creates a package.</string>
     <key>Identifier</key>
     <string>com.rderewianko.pkg.Chicken</string>
     <key>Input</key>
