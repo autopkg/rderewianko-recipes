@@ -7,18 +7,18 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Spring Tool Suite and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.Spring Tool Suite</string>
+	<string>com.rderewianko.pkg.SpringToolSuite</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
 		<string>org.springsource.sts.ide</string>
 		<key>NAME</key>
-		<string>Spring Tool SuiteS=</string>
+		<string>Spring Tool Suite</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.Spring Tool Suite</string>
+	<string>com.rderewianko.download.SpringToolSuite</string>
 	<key>Process</key>
 	<array>
 		<dict>

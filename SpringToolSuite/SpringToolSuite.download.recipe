@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Spring Tool Suite.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.Spring Tool Suite</string>
+	<string>com.rderewianko.download.SpringToolSuite</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>

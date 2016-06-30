@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Spring Tool Suite and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.munki.Spring Tool Suite</string>
+	<string>com.rderewianko.munki.SpringToolSuite</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -36,7 +36,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.Spring Tool Suite</string>
+	<string>com.rderewianko.download.SpringToolSuite</string>
 	<key>Process</key>
 	<array>
 		<dict>
