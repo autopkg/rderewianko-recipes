@@ -13,7 +13,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>YakYak</string>
+		<string>terminal-notifier</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -21,11 +21,11 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>YakYak, a stand alone app for Google Hangouts for OSX</string>
+			<string>Desktop chat client for Google Hangouts</string>
 			<key>developer</key>
 			<string></string>
 			<key>display_name</key>
-			<string>YakYak</string>
+			<string>terminal-notifier</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -57,7 +57,7 @@
 				<key>dmg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
 				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/<string>
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
