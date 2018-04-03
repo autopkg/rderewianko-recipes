@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>Joeeeeeel, why you gotta use gitlab?</string>
+	<key>Description</key>
+	<string>Downloads the latest version of DEPNotify, creates a fileset, and copies it into your FileWave Server.</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.filewave.DEPNotify</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>DEPNotify</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.rderewianko.download.DEPNotify</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>fw_app_bundle_id</key>
+				<string>menu.nomad.DEPNotify</string>
+				<key>fw_app_version</key>
+				<string>%version%</string>
+				<key>fw_destination_root</key>
+				<string>/Applications/Utilities/DEPNotify.app</string>
+				<key>fw_fileset_group</key>
+				<string>Testing</string>
+				<key>fw_fileset_name</key>
+				<string>%NAME% - %version%</string>
+				<key>fw_import_source</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/Utilities/DEPNotify.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.autopkg.filewave.FWTool/FileWaveImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
