@@ -2,7 +2,7 @@
 <plist version="1.0">
     <dict>
         <key>Comment</key>
-        <string>Joel, gitlab is a bit better.</string>
+        <string>Joel, github is a bit better.</string>
         <key>Description</key>
         <string>Downloads the latest version of DEPNotify and imports it into Munki.</string>
         <key>Identifier</key>
