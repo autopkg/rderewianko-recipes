@@ -32,7 +32,7 @@
         <key>MinimumVersion</key>
         <string>1.0.0</string>
         <key>ParentRecipe</key>
-        <string>com.rderewianko.download.DEPNotify</string>
+        <string>com.rderewianko.pkg.DEPNotify</string>
         <key>Process</key>
         <array>
             <dict>
