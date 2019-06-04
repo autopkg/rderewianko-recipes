@@ -11,7 +11,7 @@
             <key>NAME</key>
             <string>PingID</string>
             <key>DOWNLOAD_PAGE_URL</key>
-            <string>https://pingid.app</string>
+            <string>https://www.pingidentity.com/content/ping/en/resources/downloads/pingid.html</string>
         </dict>
         <key>MinimumVersion</key>
         <string>0.6.0</string>
