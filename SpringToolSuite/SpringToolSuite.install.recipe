@@ -41,7 +41,7 @@
 						<key>destination_path</key>
 						<string>/Applications</string>
 						<key>source_item</key>
-						<string>sts-bundle/%NAME%.app</string>
+						<string>sts-bundle/Spring Tool Suite.app</string>
 					</dict>
 				</array>
 			</dict>
