@@ -1,0 +1,29 @@
+#!/usr/bin/python
+import json
+import os
+import sys
+from os.path import abspath, exists
+from SystemConfiguration import SCDynamicStoreCopyConsoleUser
+
+username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]
+username = [username,""][username in [u"loginwindow", None, u""]]
+
+json_file = "/users/%s/Library/Application Support/OPEXMedia/USE Engine/settings.conf" % (username) #define the json file
+
+
+f_path = abspath("url.txt")
+
+#cause the file seems to have a \n at the end...
+if exists(f_path):
+    with open(f_path) as f:
+    	url=f.readline()[0:-1]
+
+
+#edit the file to set the url
+with open(json_file, 'r') as f:
+    data = json.load(f)
+    data['signaling']['url'] = "%s" % (url)
+
+os.remove(json_file)
+with open(json_file, 'w') as f:
+    json.dump(data, f, indent=4)
