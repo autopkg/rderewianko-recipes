@@ -22,7 +22,7 @@
                 <key>description</key>
                 <string>DEPNotify is a splash screen for the start of your dep workflow..</string>
                 <key>display_name</key>
-                <string>PingID</string>
+                <string>DEPNotify</string>
                 <key>name</key>
                 <string>%NAME%</string>
                 <key>unattended_install</key>
