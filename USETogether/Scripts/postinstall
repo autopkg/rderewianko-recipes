@@ -2,28 +2,65 @@
 import json
 import os
 import sys
+import pwd
+import grp
+import shutil 
 from os.path import abspath, exists
 from SystemConfiguration import SCDynamicStoreCopyConsoleUser
 
 username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]
 username = [username,""][username in [u"loginwindow", None, u""]]
 
-json_file = "/users/%s/Library/Application Support/OPEXMedia/USE Engine/settings.conf" % (username) #define the json file
-
-
 f_path = abspath("url.txt")
 
-#cause the file seems to have a \n at the end...
 if exists(f_path):
     with open(f_path) as f:
-    	url=f.readline()[0:-1]
+        url=f.readline()
 
 
-#edit the file to set the url
-with open(json_file, 'r') as f:
-    data = json.load(f)
-    data['signaling']['url'] = "%s" % (url)
+base_path="/users/%s/Library/Application Support/OPEXMedia/" % (username)
+path ="%s/USE Engine" % (base_path)
+sfiles="/users/%s/Documents/OPEXMedia/USE Engine" % (username)
+json_file = "%s/settings.conf" % (path) #define the json file
 
-os.remove(json_file)
-with open(json_file, 'w') as f:
-    json.dump(data, f, indent=4)
+#Deal with the json if it doesn't esist
+if not os.path.exists(path):
+    print "creating directory"
+    os.makedirs(path)
+    uid, gid =  pwd.getpwnam(username).pw_uid, grp.getgrnam('staff').gr_gid
+    
+    print "Copying settings"
+    shutil.copyfile(abspath("settings.conf"), json_file) 
+    
+    #properly set permissions
+    os.chown(base_path, uid, gid)
+    for dirpath, dirnames, filenames in os.walk(base_path):
+        for dname in dirnames:
+            os.chown(os.path.join(dirpath, dname), uid, gid)
+            for fname in filenames:
+                os.chown(os.path.join(dirpath, fname), uid, gid)
+
+    #Edit the templated settings file
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+        data['signaling']['url'] = "%s" % (url)
+        data['files']['received_files_path'] = "%s/Recieved Files/" % (sfiles)
+        data['files']['sessions_records_path'] = "%s/Sessions Records/" % (sfiles) 
+        data['logging']['path'] = "%s/Logs/" % (path)
+        #data = {}
+        #data['signaling'] = {}
+        #data['signaling']['url'] = "%s" % (url)
+        os.remove(json_file)
+        with open(json_file, 'w') as f:
+            json.dump(data, f, indent=4)
+            f.close()
+
+#edit pre-existing setting for new url.        
+if os.path.exists(path):
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+        data['signaling']['url'] = "%s" % (url)
+        os.remove(json_file)
+        with open(json_file, 'w') as f:
+            json.dump(data, f, indent=4)
+            f.close()
