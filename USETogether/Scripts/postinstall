@@ -21,7 +21,7 @@ if exists(f_path):
 base_path="/users/%s/Library/Application Support/OPEXMedia/" % (username)
 path ="%s/USE Engine" % (base_path)
 sfiles="/users/%s/Documents/OPEXMedia/USE Engine" % (username)
-json_file = "%s/settings.conf" % (path) #define the json file
+json_file = "%s/settings.conf" % (path)
 
 #Deal with the json if it doesn't esist
 if not os.path.exists(path):
@@ -47,9 +47,6 @@ if not os.path.exists(path):
         data['files']['received_files_path'] = "%s/Recieved Files/" % (sfiles)
         data['files']['sessions_records_path'] = "%s/Sessions Records/" % (sfiles) 
         data['logging']['path'] = "%s/Logs/" % (path)
-        #data = {}
-        #data['signaling'] = {}
-        #data['signaling']['url'] = "%s" % (url)
         os.remove(json_file)
         with open(json_file, 'w') as f:
             json.dump(data, f, indent=4)
