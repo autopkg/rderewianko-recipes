@@ -10,8 +10,6 @@
 	<string>com.rderewianko.pkg.MasergyCommunicator</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string></string>
 		<key>NAME</key>
 		<string>MasergyCommunicator</string>
 	</dict>
