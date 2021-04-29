@@ -2,25 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Description</key>
-	<string>Downloads the latest version of Drovio and creates a package.</string>
-	<key>Identifier</key>
-	<string>com.rderewianko.autopkg.pkg.drovio</string>
-	<key>Input</key>
-	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.drovio.drovio-app</string>
-		<key>NAME</key>
-		<string>Drovio</string>
-		<key>APP_NAME</key>
-		<string>Drovio</string>
+    <key>Description</key>
+    <string>Downloads the latest version of Drovio and creates a package.</string>
+    <key>Identifier</key>
+    <string>com.rderewianko.autopkg.pkg.drovio</string>
+    <key>Input</key>
+    <dict>
+        <key>BUNDLE_ID</key>
+        <string>com.drovio.drovio-app</string>
+        <key>NAME</key>
+        <string>Drovio</string>
+        <key>APP_NAME</key>
+        <string>Drovio</string>
         <key>SERVER_URL</key>
         <string>Your.URL.Here</string>
-	</dict>
-	<key>MinimumVersion</key>
-	<string>1.0.0</string>
-	<key>ParentRecipe</key>
-	<string>com.rderewianko.autopkg.download.drovio</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>ParentRecipe</key>
+    <string>com.rderewianko.autopkg.download.drovio</string>
     <key>Process</key>
     <array>
         <dict>
@@ -30,8 +30,8 @@
             <dict>
                 <key>input_plist_path</key>
                 <string>%pathname%/%APP_NAME%.app/Contents/Info.plist</string>
-		<key>plist_version_key</key>
-		<string>CFBundleShortVersionString</string>
+        <key>plist_version_key</key>
+        <string>CFBundleShortVersionString</string>
             </dict>
         </dict>
         <dict>
@@ -101,14 +101,14 @@
                 <dict>
                     <key>pkgname</key>
                     <string>%NAME%-%version%</string>
-                	<key>pkgroot</key>
-               		<string>%pkgroot%</string>
+                    <key>pkgroot</key>
+                    <string>%pkgroot%</string>
                     <key>version</key>
                     <string>%version%</string>
                     <key>id</key>
                     <string>%BUNDLE_ID%</string>
-               	<key>scripts</key>
-               	<string>%RECIPE_CACHE_DIR%/Scripts</string>
+                    <key>scripts</key>
+                    <string>%RECIPE_CACHE_DIR%/Scripts</string>
                     <key>chown</key>
                     <array>
                         <dict>
@@ -127,4 +127,4 @@
 </dict>
 </plist>
 
-	
+    
