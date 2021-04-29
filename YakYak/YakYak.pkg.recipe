@@ -10,8 +10,6 @@
 	<string>com.rderewianko.pkg.YakYak</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.github.yakyak</string>
 		<key>NAME</key>
 		<string>YakYak</string>
 	</dict>
