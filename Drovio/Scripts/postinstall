@@ -19,7 +19,6 @@ if exists(f_path):
 
 
 base_path="/users/%s/Library/Application Support/Drovio/" % (username)
-path ="%s/USE Engine" % (base_path)
 sfiles="/users/%s/Documents/Drovio" % (username)
 json_file = "%s/settings.conf" % (base_path)
 

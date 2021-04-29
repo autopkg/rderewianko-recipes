@@ -16,7 +16,6 @@
 		<string>Drovio</string>
         <key>SERVER_URL</key>
         <string>Your.URL.Here</string>
-
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
