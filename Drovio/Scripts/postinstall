@@ -1,0 +1,63 @@
+#!/usr/bin/python
+import json
+import os
+import sys
+import pwd
+import grp
+import shutil 
+from os.path import abspath, exists
+from SystemConfiguration import SCDynamicStoreCopyConsoleUser
+
+username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]
+username = [username,""][username in [u"loginwindow", None, u""]]
+
+f_path = abspath("url.txt")
+
+if exists(f_path):
+    with open(f_path) as f:
+        url=f.readline()
+
+
+base_path="/users/%s/Library/Application Support/Drovio/" % (username)
+path ="%s/USE Engine" % (base_path)
+sfiles="/users/%s/Documents/Drovio" % (username)
+json_file = "%s/settings.conf" % (base_path)
+
+#Deal with the json if it doesn't exsist
+if not os.path.exists(base_path):
+    print "creating directory"
+    os.makedirs(base_path)
+    uid, gid =  pwd.getpwnam(username).pw_uid, grp.getgrnam('staff').gr_gid
+    
+    print "Copying settings"
+    shutil.copyfile(abspath("settings.conf"), json_file) 
+    
+    #properly set permissions
+    os.chown(base_path, uid, gid)
+    for dirpath, dirnames, filenames in os.walk(base_path):
+        for dname in dirnames:
+            os.chown(os.path.join(dirpath, dname), uid, gid)
+            for fname in filenames:
+                os.chown(os.path.join(dirpath, fname), uid, gid)
+
+    #Edit the templated settings file
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+        data['server']['url'] = "%s" % (url)
+        data['files']['received_files_path'] = "%s/Recieved Files/" % (sfiles)
+        data['files']['sessions_records_path'] = "%s/Sessions Records/" % (sfiles) 
+        data['logging']['path'] = "%s/Logs/" % (base_path)
+        os.remove(json_file)
+        with open(json_file, 'w') as f:
+            json.dump(data, f, indent=4)
+            f.close()
+
+#edit pre-existing setting for new url.        
+if os.path.exists(base_path):
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+        data['server']['url'] = "%s" % (url)
+        os.remove(json_file)
+        with open(json_file, 'w') as f:
+            json.dump(data, f, indent=4)
+            f.close() 
