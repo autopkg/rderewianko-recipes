@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Baseline by Second Son Consulting. The package does not need to be repackaged as it's already in the desired format.</string>
+	<string>Downloads the latest version of Baseline by Second Son Consulting.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.baseline</string>
 	<key>Input</key>
@@ -20,7 +20,7 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
+				<key>source_pkg</key>
 				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
