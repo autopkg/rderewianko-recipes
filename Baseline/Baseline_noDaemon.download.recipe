@@ -23,7 +23,7 @@
 				<key>github_repo</key>
 				<string>%GITHUB_REPO%</string>
 				<key>asset_regex</key>
-				<string>baseline_NoDaemon_v.+.pkg</string>
+				<string>Baseline_NoDaemon_v.+.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
