@@ -23,7 +23,7 @@
 				<key>github_repo</key>
 				<string>%GITHUB_REPO%</string>
 				<key>asset_regex</key>
-				<string>Baseline_v[0-9].+\.pkg</string>
+				<string>baseline_v[0-9].+\.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>
