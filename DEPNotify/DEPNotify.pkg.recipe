@@ -8,10 +8,10 @@
 	<string>com.rderewianko.pkg.DEPNotify</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>DEPNotify</string>
 		<key>APP_INFO_PLIST</key>
 		<string>Applications/Utilities/%NAME%.app/Contents/Info.plist</string>
+		<key>NAME</key>
+		<string>DEPNotify</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>

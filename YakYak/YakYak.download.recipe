@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
 				<key>asset_regex</key>
 				<string>yakyak-.+-osx.zip</string>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
 			</dict>
 			<key>Processor</key>
 			<string>GitHubReleasesInfoProvider</string>

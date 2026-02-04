@@ -8,7 +8,7 @@
 	<string>com.rderewianko.download.SpringToolSuite</string>
 	<key>Input</key>
 	<dict>
-	<key>DOWNLOAD_URL</key>
+		<key>DOWNLOAD_URL</key>
 		<string>https://spring.io/tools</string>
 		<key>NAME</key>
 		<string>Spring Tool Suite</string>
@@ -18,23 +18,23 @@
 	<key>Process</key>
 	<array>
 		<dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%DOWNLOAD_URL%</string>
-                <key>re_pattern</key>
-                <string>[^"]+\-macosx.cocoa.x86_64.dmg</string>
-            </dict>
-        </dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>[^"]+\-macosx.cocoa.x86_64.dmg</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>%match%</string>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

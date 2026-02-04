@@ -44,7 +44,7 @@ class FetchScriptsPath(Processor):
         dirpath = os.path.join(basepath, dirname)
         if os.path.isdir(dirpath):
             return os.path.abspath(dirpath)
-        return None 
+        return None
 
 
     def main(self):

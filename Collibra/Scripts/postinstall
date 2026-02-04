@@ -4,7 +4,7 @@ import os
 import sys
 import pwd
 import grp
-import shutil 
+import shutil
 from os.path import abspath, exists
 from SystemConfiguration import SCDynamicStoreCopyConsoleUser
 
@@ -28,9 +28,9 @@ if not os.path.exists(path):
     uid, gid =  pwd.getpwnam(username).pw_uid, grp.getgrnam('staff').gr_gid
 
     print "Copying settings"
-    shutil.copyfile(abspath("config.json"), json_file) 
-    
-    
+    shutil.copyfile(abspath("config.json"), json_file)
+
+
     #properly set permissions
     os.chown(path, uid, gid)
     for dirpath, dirnames, filenames in os.walk(path):
@@ -55,7 +55,7 @@ if not os.path.exists(path):
             json.dump(data, f, indent=4)
             f.close()
 
-#edit pre-existing setting for new url.        
+#edit pre-existing setting for new url.
 if os.path.exists(path):
     with open(json_file, 'r') as f:
         data = json.load(f)
