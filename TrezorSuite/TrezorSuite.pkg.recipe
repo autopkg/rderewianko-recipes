@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Trezor Suite for Apple Silicon Macs (arm64) and creates a package.</string>
+	<string>Downloads the latest version of Trezor Suite and creates a package. Set ARCH to "arm64" (default) for Apple Silicon or "x64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.TrezorSuite</string>
 	<key>Input</key>
@@ -54,7 +54,7 @@
 				<key>pkg_request</key>
 				<dict>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>%NAME%-%version%-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>version</key>

@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Trezor Suite for Apple Silicon Macs (arm64).</string>
+	<string>Downloads the latest version of Trezor Suite. Set ARCH to "arm64" (default) for Apple Silicon or "x64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.download.TrezorSuite</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Trezor Suite</string>
+		<key>ARCH</key>
+		<string>arm64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -32,9 +34,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%-%version%-%ARCH%.dmg</string>
 				<key>url</key>
-				<string>https://data.trezor.io/suite/releases/desktop/latest/Trezor-Suite-%version%-mac-arm64.dmg</string>
+				<string>https://data.trezor.io/suite/releases/desktop/latest/Trezor-Suite-%version%-mac-%ARCH%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
