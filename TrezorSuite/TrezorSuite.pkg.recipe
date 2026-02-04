@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>ARCH: use "arm64" for Apple Silicon (default) or "x64" for Intel. Example: autopkg run com.rderewianko.pkg.TrezorSuite -k ARCH=x64</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Trezor Suite and creates a package.</string>
 	<key>Identifier</key>
@@ -16,6 +14,8 @@
 		<string>Trezor Suite</string>
 		<key>BUNDLE_ID</key>
 		<string>io.trezor.TrezorSuite</string>
+		<key>ARCH_COMMENT</key>
+		<string>ARCH is inherited from parent recipe. Use "arm64" (default) or "x64" for Intel. Example: autopkg run -k ARCH=x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
