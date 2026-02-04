@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import json
 import os
 import sys
@@ -24,11 +24,11 @@ json_file = "%s/settings.conf" % (base_path)
 
 #Deal with the json if it doesn't exsist
 if not os.path.exists(base_path):
-    print "creating directory"
+    print("creating directory")
     os.makedirs(base_path)
     uid, gid =  pwd.getpwnam(username).pw_uid, grp.getgrnam('staff').gr_gid
 
-    print "Copying settings"
+    print("Copying settings")
     shutil.copyfile(abspath("settings.conf"), json_file)
 
     #properly set permissions
