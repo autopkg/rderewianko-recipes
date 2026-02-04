@@ -1,3 +1,19 @@
-This recipe works out of the box, but you'll need to set the URL of your Drovio server, with an override.  
+# Drovio Recipes
 
-The key you want to change is `SERVER_URL`
+Drovio now provides a universal binary (since v3.3.0), so use these recipes:
+
+- `drovio.download` - Downloads the latest version
+- `drovio.pkg` - Creates an installer package
+- `drovio.munki` - Imports into Munki
+
+The ARM-specific recipes (`drovio.arm.*`) are deprecated.
+
+## SERVER_URL Override
+
+The pkg recipe requires a `SERVER_URL` override for your Drovio server:
+
+```
+autopkg make-override drovio.pkg
+```
+
+Then edit the override to set `SERVER_URL` to your server address.
