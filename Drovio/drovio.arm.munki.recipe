@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Drovio for Apple Silicon and imports it into Munki.</string>
+	<string>Deprecated. Downloads the latest version of Drovio and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.autopkg.munki.drovio.arm</string>
 	<key>Input</key>
@@ -35,11 +35,20 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.autopkg.pkg.drovio.arm</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe is deprecated. Drovio now provides a universal binary (since v3.3.0). Please use com.rderewianko.autopkg.munki.drovio instead.</string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
