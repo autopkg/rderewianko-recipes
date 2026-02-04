@@ -8,12 +8,12 @@
 	<string>com.rderewianko.pkg.TrezorSuite</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>Trezor Suite</string>
 		<key>APP_NAME</key>
 		<string>Trezor Suite</string>
 		<key>BUNDLE_ID</key>
 		<string>io.trezor.TrezorSuite</string>
+		<key>NAME</key>
+		<string>Trezor Suite</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,58 +22,58 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Applications</key>
 					<string>0775</string>
 				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Copier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>source_path</key>
-				<string>%pathname%/%APP_NAME%.app</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications/%APP_NAME%.app</string>
+				<key>source_path</key>
+				<string>%pathname%/%APP_NAME%.app</string>
 			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
 				<dict>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>Applications</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>%BUNDLE_ID%</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%-%ARCH%</string>
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>version</key>
 					<string>%version%</string>
-					<key>id</key>
-					<string>%BUNDLE_ID%</string>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-							<key>group</key>
-							<string>admin</string>
-						</dict>
-					</array>
 				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>

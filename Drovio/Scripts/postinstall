@@ -4,7 +4,7 @@ import os
 import sys
 import pwd
 import grp
-import shutil 
+import shutil
 from os.path import abspath, exists
 from SystemConfiguration import SCDynamicStoreCopyConsoleUser
 
@@ -27,10 +27,10 @@ if not os.path.exists(base_path):
     print "creating directory"
     os.makedirs(base_path)
     uid, gid =  pwd.getpwnam(username).pw_uid, grp.getgrnam('staff').gr_gid
-    
+
     print "Copying settings"
-    shutil.copyfile(abspath("settings.conf"), json_file) 
-    
+    shutil.copyfile(abspath("settings.conf"), json_file)
+
     #properly set permissions
     os.chown(base_path, uid, gid)
     for dirpath, dirnames, filenames in os.walk(base_path):
@@ -44,14 +44,14 @@ if not os.path.exists(base_path):
         data = json.load(f)
         data['server']['url'] = "%s" % (url)
         data['files']['received_files_path'] = "%s/Recieved Files/" % (sfiles)
-        data['files']['sessions_records_path'] = "%s/Sessions Records/" % (sfiles) 
+        data['files']['sessions_records_path'] = "%s/Sessions Records/" % (sfiles)
         data['logging']['path'] = "%s/Logs/" % (base_path)
         os.remove(json_file)
         with open(json_file, 'w') as f:
             json.dump(data, f, indent=4)
             f.close()
 
-#edit pre-existing setting for new url.        
+#edit pre-existing setting for new url.
 if os.path.exists(base_path):
     with open(json_file, 'r') as f:
         data = json.load(f)
@@ -59,4 +59,4 @@ if os.path.exists(base_path):
         os.remove(json_file)
         with open(json_file, 'w') as f:
             json.dump(data, f, indent=4)
-            f.close() 
+            f.close()
