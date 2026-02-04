@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Trezor Suite and creates a package.</string>
+	<string>Downloads the latest version of Trezor Suite and creates a package. Set ARCH to "arm64" (default) for Apple Silicon or "x64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.TrezorSuite</string>
 	<key>Input</key>
@@ -14,8 +14,6 @@
 		<string>Trezor Suite</string>
 		<key>BUNDLE_ID</key>
 		<string>io.trezor.TrezorSuite</string>
-		<key>ARCH_COMMENT</key>
-		<string>ARCH is inherited from parent recipe. Use "arm64" (default) or "x64" for Intel. Example: autopkg run -k ARCH=x64</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
