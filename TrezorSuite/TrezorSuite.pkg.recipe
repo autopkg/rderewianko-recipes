@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Trezor Suite and creates a package. Set ARCH to "arm64" (default) for Apple Silicon or "x64" for Intel.</string>
+	<string>Downloads the latest version of Trezor Suite and creates a package. ARCH defaults to "arm64" for Apple Silicon. For Intel, use: autopkg run com.rderewianko.pkg.TrezorSuite -k ARCH=x64</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.TrezorSuite</string>
 	<key>Input</key>
