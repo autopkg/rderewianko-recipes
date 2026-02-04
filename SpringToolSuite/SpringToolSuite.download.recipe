@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Spring Tool Suite.</string>
+	<string>Downloads the latest version of Spring Tool Suite. Set ARCH to "aarch64" (default) for Apple Silicon or "x86_64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.download.SpringToolSuite</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>aarch64</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://spring.io/tools</string>
 		<key>NAME</key>
@@ -21,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>[^"]+\-macosx.cocoa.x86_64.dmg</string>
+				<string>[^"]+\-macosx.cocoa.%ARCH%.dmg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
@@ -32,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%-%ARCH%.dmg</string>
 				<key>url</key>
 				<string>%match%</string>
 			</dict>
@@ -47,9 +49,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/SpringToolSuite4.app</string>
+				<string>%pathname%/SpringToolsForEclipse.app</string>
 				<key>requirement</key>
-				<string>identifier "org.springframework.boot.ide.branding.sts4" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "4NBHJ75BA6"</string>
+				<string>identifier "org.springframework.boot.ide.branding.springtools" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "4NBHJ75BA6"</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
@@ -58,7 +60,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/SpringToolSuite4.app/Contents/Info.plist</string>
+				<string>%pathname%/SpringToolsForEclipse.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
