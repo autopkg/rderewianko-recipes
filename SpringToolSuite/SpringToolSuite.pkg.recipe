@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest Spring Tool Suite disk image and builds a package.</string>
+	<string>Downloads latest Spring Tool Suite disk image and builds a package. Set ARCH to "aarch64" (default) for Apple Silicon or "x86_64" for Intel.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.SpringToolSuite</string>
 	<key>Input</key>
@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Spring Tool Suite</string>
 		<key>SOFTWARETITLE</key>
-		<string>SpringToolSuite4</string>
+		<string>SpringToolsForEclipse</string>
 	</dict>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.download.SpringToolSuite</string>
@@ -70,7 +70,7 @@
 					<key>id</key>
 					<string>%bundleid%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>%NAME%-%version%-%ARCH%</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
