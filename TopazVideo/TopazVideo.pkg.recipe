@@ -63,7 +63,7 @@
 					<key>id</key>
 					<string>%BUNDLE_ID%</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>TopazVideo-%version%</string>
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>version</key>
