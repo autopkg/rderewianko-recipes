@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Topaz Video.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.TopazVideo</string>
+	<string>com.rderewianko.download.topazvideo</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>

@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Topaz Gigapixel.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.TopazGigapixel</string>
+	<string>com.rderewianko.download.topazgigapixel</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>

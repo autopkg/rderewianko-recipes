@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Topaz Video and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.TopazVideo</string>
+	<string>com.rderewianko.pkg.topazvideo</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.TopazVideo</string>
+	<string>com.rderewianko.download.topazvideo</string>
 	<key>Process</key>
 	<array>
 		<dict>
