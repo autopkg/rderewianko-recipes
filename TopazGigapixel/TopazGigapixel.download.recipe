@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Topaz Gigapixel AI. Note: The DMG contains an installer application that must be run manually.</string>
+	<string>Downloads the latest version of Topaz Gigapixel.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.TopazGigapixelAI</string>
+	<string>com.rderewianko.download.TopazGigapixel</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
 		<string>https://topazlabs.com/d/gigapixelstudio/latest/mac/full</string>
 		<key>NAME</key>
-		<string>Topaz Gigapixel AI</string>
+		<string>Topaz Gigapixel</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%.pkg</string>
 				<key>url</key>
 				<string>%DOWNLOAD_URL%</string>
 			</dict>
@@ -35,10 +35,14 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Topaz Labs, LLC (3G3JE37ZHF)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
 				<key>input_path</key>
-				<string>%pathname%/*.app</string>
-				<key>requirement</key>
-				<string>anchor apple generic and identifier "com.installbuilder.appinstaller" and certificate leaf[subject.OU] = "3G3JE37ZHF"</string>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>

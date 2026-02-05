@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Topaz Video AI.</string>
+	<string>Downloads the latest version of Topaz Video.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.TopazVideoAI</string>
+	<string>com.rderewianko.download.TopazVideo</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
 		<string>https://topazlabs.com/d/videostudio/latest/mac/full</string>
 		<key>NAME</key>
-		<string>Topaz Video AI</string>
+		<string>Topaz Video</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -36,7 +36,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_path</key>
-				<string>%pathname%/Topaz Video AI.app</string>
+				<string>%pathname%/Topaz Video.app</string>
 				<key>requirement</key>
 				<string>identifier "com.topazlabs.Topaz-Video-AI" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "3G3JE37ZHF"</string>
 			</dict>
@@ -47,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Topaz Video AI.app/Contents/Info.plist</string>
+				<string>%pathname%/Topaz Video.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>

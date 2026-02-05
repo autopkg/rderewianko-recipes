@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Topaz Photo AI.</string>
+	<string>Downloads the latest version of Topaz Photo.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.download.TopazPhotoAI</string>
+	<string>com.rderewianko.download.TopazPhoto</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
 		<string>https://topazlabs.com/d/photostudio/latest/mac/full</string>
 		<key>NAME</key>
-		<string>Topaz Photo AI</string>
+		<string>Topaz Photo</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>

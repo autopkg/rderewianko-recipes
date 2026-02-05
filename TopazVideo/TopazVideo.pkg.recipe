@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Topaz Video AI and creates a package.</string>
+	<string>Downloads the latest version of Topaz Video and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.rderewianko.pkg.TopazVideoAI</string>
+	<string>com.rderewianko.pkg.TopazVideo</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>
 		<string>com.topazlabs.Topaz-Video-AI</string>
 		<key>NAME</key>
-		<string>Topaz Video AI</string>
+		<string>Topaz Video</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.rderewianko.download.TopazVideoAI</string>
+	<string>com.rderewianko.download.TopazVideo</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -37,9 +37,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Topaz Video AI.app</string>
+				<string>%pkgroot%/Applications/Topaz Video.app</string>
 				<key>source_path</key>
-				<string>%pathname%/Topaz Video AI.app</string>
+				<string>%pathname%/Topaz Video.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
