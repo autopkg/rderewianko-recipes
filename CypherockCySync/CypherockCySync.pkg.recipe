@@ -37,9 +37,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Cypherock CySync.app</string>
+				<string>%pkgroot%/Applications/cypherock-cysync.app</string>
 				<key>source_path</key>
-				<string>%pathname%/Cypherock CySync.app</string>
+				<string>%pathname%/cypherock-cysync.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
