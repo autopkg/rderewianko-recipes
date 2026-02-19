@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of Blackmagic RAW.
+
+This product requires registration in order to download, so
+you _must_ override all input variables beginning with 'REG_'
+and they must contain data.
+
+REG_COUNTRY is of the form 'us', 'ca', 'au', etc.
+</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.download.BlackmagicRAW</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>BlackmagicRAW</string>
+		<key>PRODUCT_NAME_PATTERN</key>
+		<string>Blackmagic RAW (?P&lt;version&gt;[\d.]+)</string>
+		<key>REG_FIRSTNAME</key>
+		<string></string>
+		<key>REG_LASTNAME</key>
+		<string></string>
+		<key>REG_EMAIL</key>
+		<string></string>
+		<key>REG_PHONE</key>
+		<string></string>
+		<key>REG_CITY</key>
+		<string></string>
+		<key>REG_STREET</key>
+		<string></string>
+		<key>REG_STATE</key>
+		<string></string>
+		<key>REG_ZIP</key>
+		<string></string>
+		<key>REG_COUNTRY</key>
+		<string></string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.timsutton.download.davinciresolve18/BlackMagicURLProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>product_name_pattern</key>
+				<string>%PRODUCT_NAME_PATTERN%</string>
+				<key>product_name</key>
+				<string>Blackmagic RAW</string>
+				<key>registration_info</key>
+				<dict>
+					<key>firstname</key>
+					<string>%REG_FIRSTNAME%</string>
+					<key>lastname</key>
+					<string>%REG_LASTNAME%</string>
+					<key>email</key>
+					<string>%REG_EMAIL%</string>
+					<key>phone</key>
+					<string>%REG_PHONE%</string>
+					<key>city</key>
+					<string>%REG_CITY%</string>
+					<key>street</key>
+					<string>%REG_STREET%</string>
+					<key>state</key>
+					<string>%REG_STATE%</string>
+					<key>zip</key>
+					<string>%REG_ZIP%</string>
+					<key>country</key>
+					<string>%REG_COUNTRY%</string>
+					<key>hasAgreedToTerms</key>
+					<true/>
+					<key>policy</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
