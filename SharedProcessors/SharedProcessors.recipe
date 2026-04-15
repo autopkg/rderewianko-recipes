@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Stub recipe to use the shared processors in this repo.
+
+Reference a processor from any recipe like this:
+
+    &lt;key&gt;Processor&lt;/key&gt;
+    &lt;string&gt;com.rderewianko.SharedProcessors/ProcessorName&lt;/string&gt;
+	</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.SharedProcessors</string>
+	<key>Input</key>
+	<dict/>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array/>
+</dict>
+</plist>
