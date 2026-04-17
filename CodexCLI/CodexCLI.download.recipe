@@ -18,10 +18,24 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>curl_opts</key>
+				<array>
+					<string>--retry</string>
+					<string>3</string>
+					<string>--retry-delay</string>
+					<string>5</string>
+				</array>
 				<key>re_pattern</key>
-				<string>"tag_name":\s*"rust-v([0-9]+\.[0-9]+\.[0-9]+)"</string>
+				<string>"browser_download_url":\s*"(?P&lt;download_url&gt;https://github\.com/openai/codex/releases/download/(?P&lt;tag&gt;[^"/]*?(?P&lt;version&gt;\d+\.\d+\.\d+)[^"/]*)/codex-aarch64-apple-darwin\.tar\.gz)"</string>
+				<key>request_headers</key>
+				<dict>
+					<key>Accept</key>
+					<string>application/vnd.github+json</string>
+					<key>X-GitHub-Api-Version</key>
+					<string>2022-11-28</string>
+				</dict>
 				<key>result_output_var_name</key>
-				<string>version</string>
+				<string>download_url</string>
 				<key>url</key>
 				<string>https://api.github.com/repos/openai/codex/releases/latest</string>
 			</dict>
@@ -34,7 +48,7 @@
 				<key>filename</key>
 				<string>%NAME%-%version%-aarch64-apple-darwin.tar.gz</string>
 				<key>url</key>
-				<string>https://github.com/openai/codex/releases/download/rust-v%version%/codex-aarch64-apple-darwin.tar.gz</string>
+				<string>%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
