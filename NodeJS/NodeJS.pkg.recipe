@@ -18,6 +18,15 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe is deprecated and will be removed on July 21, 2026. Please use com.github.novaksam.pkg.NodeJS (https://github.com/autopkg/novaksam-recipes) instead.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
