@@ -3,37 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest arm64 (Apple Silicon) release of Codex CLI from GitHub.
-
-Uses GitHubReleasesInfoProvider so the API call is authenticated via AutoPkg's
-standard GITHUB_TOKEN preference (or ~/.config/github_token), avoiding the
-60-req/hour unauthenticated rate limit that was causing URLTextSearcher to
-fail intermittently on shared CI runners.</string>
+	<string>Downloads the latest arm64 (Apple Silicon) release of Codex CLI from GitHub.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.download.CodexCLI</string>
 	<key>Input</key>
 	<dict>
-		<key>ASSET_REGEX</key>
-		<string>^codex-aarch64-apple-darwin\.tar\.gz$</string>
-		<key>GITHUB_REPO</key>
-		<string>openai/codex</string>
 		<key>NAME</key>
 		<string>CodexCLI</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.3</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>asset_regex</key>
-				<string>%ASSET_REGEX%</string>
-				<key>github_repo</key>
-				<string>%GITHUB_REPO%</string>
+				<key>re_pattern</key>
+				<string>"tag_name":\s*"rust-v([0-9]+\.[0-9]+\.[0-9]+)"</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
+				<key>url</key>
+				<string>https://api.github.com/repos/openai/codex/releases/latest</string>
 			</dict>
 			<key>Processor</key>
-			<string>GitHubReleasesInfoProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -41,7 +34,7 @@ fail intermittently on shared CI runners.</string>
 				<key>filename</key>
 				<string>%NAME%-%version%-aarch64-apple-darwin.tar.gz</string>
 				<key>url</key>
-				<string>%url%</string>
+				<string>https://github.com/openai/codex/releases/download/rust-v%version%/codex-aarch64-apple-darwin.tar.gz</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
