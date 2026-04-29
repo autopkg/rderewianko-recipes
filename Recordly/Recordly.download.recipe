@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest arm64 (Apple Silicon) release of Recordly from GitHub.
+
+Uses GitHubReleasesInfoProvider for authenticated API calls (avoids the
+60-req/hour unauthenticated rate limit on shared CI runners).
+
+NOTE: An x86_64 (Intel) build is also published as Recordly-x64.dmg —
+override ASSET_REGEX to ^Recordly-x64\.dmg$ to fetch that variant
+instead. Only the arm64 build is wired up by default here.</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.download.Recordly</string>
+	<key>Input</key>
+	<dict>
+		<key>ASSET_REGEX</key>
+		<string>^Recordly-arm64\.dmg$</string>
+		<key>GITHUB_REPO</key>
+		<string>webadderallorg/Recordly</string>
+		<key>NAME</key>
+		<string>Recordly</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.6</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>%ASSET_REGEX%</string>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%-arm64.dmg</string>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
