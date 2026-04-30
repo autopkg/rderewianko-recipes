@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest universal (Apple Silicon + Intel) DMG of Rayon
+from the vendor's S3 bucket.
+
+Rayon is built with electron-builder, which publishes a latest-mac.yml
+manifest alongside each release. URLTextSearcher scrapes the current
+version out of that manifest so the DMG URL stays in sync with new
+releases. The bundled Squirrel auto-updater inside the app will also
+pull updates on its own; deploy this pkg only on managed fleets where
+self-update is disabled or undesirable.</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.download.Rayon</string>
+	<key>Input</key>
+	<dict>
+		<key>BASE_URL</key>
+		<string>https://rayon-electron.s3.eu-west-3.amazonaws.com/rayon-electron/rayon-electron</string>
+		<key>NAME</key>
+		<string>Rayon</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>^version:\s+(?P&lt;version&gt;[\d.]+)</string>
+				<key>url</key>
+				<string>%BASE_URL%/latest-mac.yml</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%-universal.dmg</string>
+				<key>url</key>
+				<string>%BASE_URL%/rayon-electron-%version%-universal.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
