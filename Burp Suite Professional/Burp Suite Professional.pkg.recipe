@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of Burp Suite Professional and creates a package.</string>
+	<string>Downloads the latest version of Burp Suite and creates a package.
+
+As of Burp 2026.4 PortSwigger ships a single "desktop" installer for both
+Professional and Community Edition; the edition is selected at first launch
+via license activation. The DMG and installed app are named "Burp Suite"
+(no Pro/Community suffix).</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.burpsuiteprofessional</string>
 	<key>Input</key>
@@ -37,9 +42,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Burp Suite Professional.app</string>
+				<string>%pkgroot%/Applications/Burp Suite.app</string>
 				<key>source_path</key>
-				<string>%pathname%/Burp Suite Professional.app</string>
+				<string>%pathname%/Burp Suite.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
