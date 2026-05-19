@@ -80,6 +80,15 @@ a clean semver acceptable to PkgCreator.</string>
 			<key>Processor</key>
 			<string>Unarchiver</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.rderewianko.SharedProcessors/Unquarantine</string>
+		</dict>
 	</array>
 </dict>
 </plist>
