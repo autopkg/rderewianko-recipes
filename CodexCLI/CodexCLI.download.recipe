@@ -83,11 +83,11 @@ a clean semver acceptable to PkgCreator.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>path</key>
-				<string>%RECIPE_CACHE_DIR%/unarchived</string>
+				<key>quarantined_files_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived/codex-aarch64-apple-darwin</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.rderewianko.SharedProcessors/Unquarantine</string>
+			<string>com.github.dataJAR-recipes.Shared Processors/QuarantineRemover</string>
 		</dict>
 	</array>
 </dict>
