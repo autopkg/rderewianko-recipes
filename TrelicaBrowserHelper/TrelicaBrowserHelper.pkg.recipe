@@ -34,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>com\.trelica\.browserhelperinstaller&quot; version=&quot;(?P&lt;version&gt;[^&quot;]+)&quot;</string>
+				<string>com\.trelica\.browserhelperinstaller" version="(?P&lt;version&gt;[^"]+)"</string>
 				<key>url</key>
 				<string>file:////%RECIPE_CACHE_DIR%/expand/Distribution</string>
 			</dict>
