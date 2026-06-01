@@ -35,17 +35,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dirname</key>
-				<string>.</string>
-			</dict>
-			<key>Comment</key>
-			<string>Resolve this recipe's own directory (override-safe) into %dirpath%, since %RECIPE_DIR% points at the override location.</string>
-			<key>Processor</key>
-			<string>FetchScriptsPath</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkgdirs</key>
 				<dict>
 					<key>Library/LaunchAgents</key>
@@ -78,7 +67,7 @@
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
-				<string>%dirpath%/payload/usr/local/bin/bagel-scan</string>
+				<string>%RECIPE_DIR%/payload/usr/local/bin/bagel-scan</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -91,7 +80,7 @@
 				<key>overwrite</key>
 				<true/>
 				<key>source_path</key>
-				<string>%dirpath%/payload/Library/LaunchAgents/zip.recyclebin.bagel.plist</string>
+				<string>%RECIPE_DIR%/payload/Library/LaunchAgents/zip.recyclebin.bagel.plist</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -145,7 +134,7 @@
 					<key>pkgtype</key>
 					<string>flat</string>
 					<key>scripts</key>
-					<string>%dirpath%/scripts</string>
+					<string>%RECIPE_DIR%/scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
