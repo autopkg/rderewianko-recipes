@@ -1,0 +1,24 @@
+#!/bin/bash
+# postinstall — bootstrap the LaunchAgent for the currently logged-in user.
+# On subsequent logins launchd loads it automatically from /Library/LaunchAgents/.
+
+LAUNCH_AGENT="/Library/LaunchAgents/zip.recyclebin.bagel.plist"
+LOGGED_IN_USER=$(stat -f "%Su" /dev/console 2>/dev/null)
+
+# Make the wrapper executable (pkgbuild doesn't preserve chmod reliably)
+chmod 0755 /usr/local/bin/bagel
+chmod 0755 /usr/local/bin/bagel-scan
+
+if [[ -z "${LOGGED_IN_USER}" || "${LOGGED_IN_USER}" == "root" || "${LOGGED_IN_USER}" == "loginwindow" ]]; then
+    echo "No interactive user logged in — LaunchAgent will load on next login."
+    exit 0
+fi
+
+LOGGED_IN_UID=$(id -u "${LOGGED_IN_USER}" 2>/dev/null)
+
+# Try to bootstrap; if already loaded, kickstart to pick up any changes.
+launchctl bootstrap "gui/${LOGGED_IN_UID}" "${LAUNCH_AGENT}" 2>/dev/null \
+    || launchctl kickstart -k "gui/${LOGGED_IN_UID}/zip.recyclebin.bagel" 2>/dev/null \
+    || true
+
+exit 0
