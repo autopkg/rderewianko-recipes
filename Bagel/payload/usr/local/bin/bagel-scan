@@ -1,0 +1,11 @@
+#!/bin/bash
+# bagel-scan — wrapper called by the LaunchAgent so bagel always writes
+# to the current user's home directory regardless of how launchd resolves it.
+
+set -euo pipefail
+
+LOG_DIR="${HOME}/Library/Logs/bagel"
+RESULTS_FILE="${LOG_DIR}/results.json"
+
+mkdir -p "${LOG_DIR}"
+exec /usr/local/bin/bagel scan --output-file "${RESULTS_FILE}"
