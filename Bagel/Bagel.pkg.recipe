@@ -51,12 +51,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination</key>
-				<string>%RECIPE_CACHE_DIR%/pkg_root/usr/local/bin/bagel</string>
-				<key>overwrite</key>
-				<true/>
 				<key>source</key>
 				<string>%RECIPE_CACHE_DIR%/unpacked/bagel</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/pkg_root/usr/local/bin/bagel</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileMover</string>
