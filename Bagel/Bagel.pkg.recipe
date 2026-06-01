@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest bagel release and builds a pkg containing the binary, wrapper script, and LaunchAgent.</string>
+	<string>Downloads the latest bagel release and builds a pkg that installs the bagel binary to /usr/local/bin.</string>
 	<key>Identifier</key>
 	<string>com.rderewianko.pkg.Bagel</string>
 	<key>Input</key>
@@ -35,21 +35,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dirname</key>
-				<string>.</string>
-			</dict>
-			<key>Comment</key>
-			<string>Resolve this recipe's own directory (override-safe) into %dirpath%, since %RECIPE_DIR% points at the override location.</string>
-			<key>Processor</key>
-			<string>FetchScriptsPath</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkgdirs</key>
 				<dict>
-					<key>Library/LaunchAgents</key>
-					<string>0755</string>
 					<key>usr/local/bin</key>
 					<string>0755</string>
 				</dict>
@@ -73,32 +60,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/pkg_root/usr/local/bin/bagel-scan</string>
-				<key>overwrite</key>
-				<true/>
-				<key>source_path</key>
-				<string>%dirpath%/payload/usr/local/bin/bagel-scan</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/pkg_root/Library/LaunchAgents/zip.recyclebin.bagel.plist</string>
-				<key>overwrite</key>
-				<true/>
-				<key>source_path</key>
-				<string>%dirpath%/payload/Library/LaunchAgents/zip.recyclebin.bagel.plist</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkg_request</key>
 				<dict>
 					<key>chown</key>
@@ -113,26 +74,6 @@
 							<key>user</key>
 							<string>root</string>
 						</dict>
-						<dict>
-							<key>group</key>
-							<string>wheel</string>
-							<key>mode</key>
-							<string>0755</string>
-							<key>path</key>
-							<string>usr/local/bin/bagel-scan</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-						<dict>
-							<key>group</key>
-							<string>wheel</string>
-							<key>mode</key>
-							<string>0644</string>
-							<key>path</key>
-							<string>Library/LaunchAgents/zip.recyclebin.bagel.plist</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
 					</array>
 					<key>id</key>
 					<string>%PKG_ID%</string>
@@ -144,8 +85,6 @@
 					<string>%RECIPE_CACHE_DIR%/pkg_root</string>
 					<key>pkgtype</key>
 					<string>flat</string>
-					<key>scripts</key>
-					<string>%dirpath%/scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
