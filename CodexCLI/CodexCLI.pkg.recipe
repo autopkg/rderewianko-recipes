@@ -71,7 +71,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>com.openai.codex.pkg</string>
+					<string>com.openai.codexcli</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>
