@@ -81,7 +81,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>net.videocopilot.FXConsole.pkg</string>
+					<string>net.videocopilot.FXConsole</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
 					<key>pkgname</key>
