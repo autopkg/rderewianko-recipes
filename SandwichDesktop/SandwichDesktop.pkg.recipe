@@ -27,10 +27,10 @@ a real version to work with.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>flat_pkg_path</key>
-				<string>%pathname%</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpack</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -40,10 +40,10 @@ a real version to work with.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/1.pkg/Payload</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack/1.pkg/Payload</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -64,10 +64,10 @@ a real version to work with.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source_pkg</key>
-				<string>%pathname%</string>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCopier</string>

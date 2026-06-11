@@ -19,12 +19,12 @@ wholesale if the vendor ever changes the endpoint.</string>
 	<string>com.rderewianko.download.SandwichDesktop</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
-		<string>SandwichDesktop</string>
 		<key>ARCH</key>
 		<string>arm64</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://download.sandwichtrading.com/desktop-osx-%ARCH%</string>
+		<key>NAME</key>
+		<string>SandwichDesktop</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -48,14 +48,14 @@ wholesale if the vendor ever changes the endpoint.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%pathname%</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Russel Rillema (FYTUSQARXG)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>CodeSignatureVerifier</string>
