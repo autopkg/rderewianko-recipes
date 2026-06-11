@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest arm64 (Apple Silicon) release of Sandwich Desktop and verifies its signature.
+
+The vendor ships a notarized, signed flat .pkg directly from
+https://download.sandwichtrading.com/desktop-osx-arm64 (which 301-redirects
+to the current build on Google Cloud Storage). The download endpoint always
+serves the latest version; AutoPkg uses ETag/Last-Modified caching to detect
+new builds.
+
+Defaults to the arm64 (Apple Silicon) build. To fetch the x86_64 (Intel)
+build instead, override ARCH with "x64" (e.g. autopkg run ... -k ARCH=x64,
+or set ARCH in a recipe override). DOWNLOAD_URL can still be overridden
+wholesale if the vendor ever changes the endpoint.</string>
+	<key>Identifier</key>
+	<string>com.rderewianko.download.SandwichDesktop</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>SandwichDesktop</string>
+		<key>ARCH</key>
+		<string>arm64</string>
+		<key>DOWNLOAD_URL</key>
+		<string>https://download.sandwichtrading.com/desktop-osx-%ARCH%</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.pkg</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Russel Rillema (FYTUSQARXG)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
