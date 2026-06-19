@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest arm64 (Apple Silicon) release of Codex CLI from GitHub.
+	<string>Downloads the latest release of Codex CLI from GitHub. Set ARCH to either: arm64 or x86_64
 
 Uses GitHubReleasesInfoProvider for authenticated API calls (avoids the
 60-req/hour unauthenticated rate limit on shared CI runners), then
@@ -13,8 +13,8 @@ a clean semver acceptable to PkgCreator.</string>
 	<string>com.rderewianko.download.CodexCLI</string>
 	<key>Input</key>
 	<dict>
-		<key>ASSET_REGEX</key>
-		<string>^codex-aarch64-apple-darwin\.tar\.gz$</string>
+		<key>ARCH</key>
+		<string>arm64</string>
 		<key>GITHUB_REPO</key>
 		<string>openai/codex</string>
 		<key>NAME</key>
@@ -29,8 +29,23 @@ a clean semver acceptable to PkgCreator.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>arm64</string>
+				<key>input_string</key>
+				<string>%ARCH%</string>
+				<key>replace</key>
+				<string>aarch64</string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_ARCH</string>
+			</dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>asset_regex</key>
-				<string>%ASSET_REGEX%</string>
+				<string>^codex-%DOWNLOAD_ARCH%-apple-darwin\.tar\.gz$</string>
 				<key>github_repo</key>
 				<string>%GITHUB_REPO%</string>
 			</dict>
@@ -56,7 +71,7 @@ a clean semver acceptable to PkgCreator.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%-aarch64-apple-darwin.tar.gz</string>
+				<string>%NAME%-%version%-%DOWNLOAD_ARCH%-apple-darwin.tar.gz</string>
 				<key>url</key>
 				<string>%url%</string>
 			</dict>
@@ -83,8 +98,19 @@ a clean semver acceptable to PkgCreator.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived/codex-%DOWNLOAD_ARCH%-apple-darwin</string>
+				<key>requirement</key>
+				<string>identifier "codex" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2DC432GLL2"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>quarantined_files_path</key>
-				<string>%RECIPE_CACHE_DIR%/unarchived/codex-aarch64-apple-darwin</string>
+				<string>%RECIPE_CACHE_DIR%/unarchived/codex-%DOWNLOAD_ARCH%-apple-darwin</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.dataJAR-recipes.Shared Processors/QuarantineRemover</string>
