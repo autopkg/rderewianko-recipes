@@ -47,6 +47,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/usr/local/bin/codex-code-mode-host</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived-code-mode-host/codex-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_request</key>
 				<dict>
 					<key>chown</key>
@@ -68,6 +79,16 @@
 							<string>0755</string>
 							<key>path</key>
 							<string>usr/local/bin/codex</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+						<dict>
+							<key>group</key>
+							<string>wheel</string>
+							<key>mode</key>
+							<string>0755</string>
+							<key>path</key>
+							<string>usr/local/bin/codex-code-mode-host</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>

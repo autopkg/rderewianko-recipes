@@ -45,6 +45,32 @@ a clean semver acceptable to PkgCreator.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>asset_regex</key>
+				<string>^codex-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin\.tar\.gz$</string>
+				<key>github_repo</key>
+				<string>%GITHUB_REPO%</string>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>find</key>
+				<string></string>
+				<key>input_string</key>
+				<string>%url%</string>
+				<key>replace</key>
+				<string></string>
+				<key>result_output_var_name</key>
+				<string>CMH_URL</string>
+			</dict>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
 				<string>^codex-%DOWNLOAD_ARCH%-apple-darwin\.tar\.gz$</string>
 				<key>github_repo</key>
 				<string>%GITHUB_REPO%</string>
@@ -79,6 +105,17 @@ a clean semver acceptable to PkgCreator.</string>
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin.tar.gz</string>
+				<key>url</key>
+				<string>%CMH_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
 		</dict>
@@ -86,9 +123,22 @@ a clean semver acceptable to PkgCreator.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>archive_path</key>
-				<string>%pathname%</string>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%-%DOWNLOAD_ARCH%-apple-darwin.tar.gz</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/unarchived</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin.tar.gz</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived-code-mode-host</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
@@ -109,8 +159,28 @@ a clean semver acceptable to PkgCreator.</string>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived-code-mode-host/codex-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin</string>
+				<key>requirement</key>
+				<string>identifier "codex-code-mode-host" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2DC432GLL2"</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>quarantined_files_path</key>
 				<string>%RECIPE_CACHE_DIR%/unarchived/codex-%DOWNLOAD_ARCH%-apple-darwin</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.dataJAR-recipes.Shared Processors/QuarantineRemover</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>quarantined_files_path</key>
+				<string>%RECIPE_CACHE_DIR%/unarchived-code-mode-host/codex-code-mode-host-%DOWNLOAD_ARCH%-apple-darwin</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.dataJAR-recipes.Shared Processors/QuarantineRemover</string>
