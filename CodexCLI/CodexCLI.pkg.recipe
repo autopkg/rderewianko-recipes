@@ -68,7 +68,7 @@
 							<key>mode</key>
 							<string>0755</string>
 							<key>path</key>
-							<string>usr/local/bin</string>
+							<string>/usr/local/bin/codex</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
@@ -78,17 +78,7 @@
 							<key>mode</key>
 							<string>0755</string>
 							<key>path</key>
-							<string>usr/local/bin/codex</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-						<dict>
-							<key>group</key>
-							<string>wheel</string>
-							<key>mode</key>
-							<string>0755</string>
-							<key>path</key>
-							<string>usr/local/bin/codex-code-mode-host</string>
+							<string>/usr/local/bin/codex-code-mode-host</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
