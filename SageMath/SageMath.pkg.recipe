@@ -14,7 +14,7 @@
 		<string>SageMath</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.dataJAR-recipes.download.SageMath</string>
 	<key>Process</key>

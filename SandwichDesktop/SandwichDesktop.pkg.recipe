@@ -19,7 +19,7 @@ a real version to work with.</string>
 		<string>SandwichDesktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.download.SandwichDesktop</string>
 	<key>Process</key>

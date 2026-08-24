@@ -27,7 +27,7 @@ wholesale if the vendor ever changes the endpoint.</string>
 		<string>SandwichDesktop</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -19,7 +19,7 @@ via license activation. The DMG and installed app are named "Burp Suite"
 		<string>BurpSuiteProfessional</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.dataJAR-recipes.download.Burp Suite Professional</string>
 	<key>Process</key>
