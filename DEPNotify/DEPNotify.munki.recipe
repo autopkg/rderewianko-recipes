@@ -35,7 +35,7 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.rderewianko.download.DEPNotify</string>
 	<key>Process</key>

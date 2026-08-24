@@ -12,7 +12,7 @@
 		<string>Chicken</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.6.1</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.keeleysam.recipes.Chicken.download</string>
 	<key>Process</key>
